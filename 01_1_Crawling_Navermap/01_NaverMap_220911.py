@@ -31,7 +31,7 @@ soup = BeautifulSoup(res, 'html.parser')
 # 4. XPATH로 블로그 리뷰 카운트 가져온 후, 크롤링 대상인지 판별(블로그리뷰가 100개 미만일 때 크롤링)
 review_counts = driver.find_elements(By.XPATH, '/html/body/div[3]/div/div/div/div[2]/div[1]/div[2]/span[3]/a/em')
 for review_count in review_counts:
-    print(review_count.text)
+    print('블로그 리뷰 수 : ', review_count.text)
 
 if len(review_count.text) > 2 :
     print('크롤링하지 않음')
